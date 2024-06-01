@@ -1,0 +1,75 @@
+
+html {
+    scroll-behavior: smooth !important;
+}
+
+
+*{
+    box-sizing: border-box;
+}
+
+.overlay {
+    position: absolute;
+    content: " ";
+    height: 100%;
+    width: 0%;
+    position: absolute;
+    transform-origin: left;
+    top: 0;
+    left: 0;
+    z-index: 999;
+    background-color: rgb(0, 0, 0);
+    // transition: all 1s;
+}
+
+.cover, .ookan, .eeji, .eeta, .eerin, .aarun, .eefa, .eeje, .eejo{
+    opacity: 0;
+}
+
+@keyframes flash {
+    0% {
+      left: 0 !important;
+      width: 0%;
+    }
+
+    // 20% {
+    // //   left: 0 !important;
+    // //   width: 100%;
+    // }
+
+    // 40% {
+    // //   left: 0 !important;
+    // //   width: 100%;
+    // }
+
+    // 50% {
+    //   left: 0 !important;
+    //   width: 100%;
+    // }
+    
+    // 60% {
+    //   left: unset !important;
+    //   right: 0;
+    //   width: 100%;
+    // }
+
+    // 80% {
+
+    // }
+
+    100% {
+      left: 0 !important;
+      width: 50% !important;
+    }
+  }
+
+
+
+// @media(max-width: 480px) {
+//     .landing {
+//         background-image: url('/assets/ruggedman-1.png');
+//         background-size: cover;
+//         background-position: 50% 50%;
+//     }
+
+// }
