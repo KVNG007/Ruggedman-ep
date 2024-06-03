@@ -14,6 +14,7 @@ import { BsChevronLeft, BsChevronRight } from 'react-icons/bs';
 import gsap from 'gsap';
 import SlideComp from '../../Components/SlideComp';
 import Footer from '../../Components/Footer';
+import { CentralModal } from '../../Components/Modal';
 
 
 const Landing = () => {
@@ -22,6 +23,7 @@ const Landing = () => {
 
 
   const [currentSlide, setCurrentSlide] = useState(0);
+  const [showModal, setShowModal] = useState(false);
 
   const slides = ["ookan", "eeji", 'eeta', 'eerin', 'aarun', 'eefa', 'eeje' , 'eejo'];
 
@@ -65,6 +67,11 @@ const Landing = () => {
       ease:'expo.inOut',
       // duration: 0.25
     })
+
+
+    setTimeout(() => {
+      setShowModal(true)
+    }, 2500);
 
 
   }, [])
@@ -234,13 +241,44 @@ const Landing = () => {
                 Ugochukwu Stevens and being 4th in a line of five children was
                 tough (talk about attain to) .In addition, moving to Lagos...
               </p>
-              <Link className="w-max text-white text-[10px] bg-accent font-montserrat px-3 h-8 mt-2 flex items-center justify-center rounded-md">
+              <Link to={`/about`} className="w-max text-white text-[10px] bg-accent font-montserrat px-3 h-8 mt-2 flex items-center justify-center rounded-md">
                 LEARN MORE
               </Link>
             </article>
           </aside>
         </div>
       </section>
+
+      <CentralModal isOpen={showModal} closeModal={()=> setShowModal(false)} >
+        <div className='relative z-20  mt-[7.5%] p-8 py-[40px] w-full max-w-[480px]  bg-[#0F0F11] flex flex-col justify-between'>
+
+          <div className="w-full h-full flex flex-col  text-white text-left drop-shadow-sm">
+              <h1 className="font-light text-2xl font-crimson text-center">
+                Newsletter
+              </h1>
+
+              <section className="w-full flex flex-col gap-3 text-white font-roboto">
+                  <aside className='flex flex-col gap-1'>
+                    <label htmlFor="name" className='text-[10px] font-bold font-nunito'><span className='text-xs'>*</span> NAME</label>
+                    <input type="text" name="name" id=""  className='h-7 bg-transparent border-b border-white w-full px-4 outline-none '/>
+                  </aside>
+                  <aside className='flex flex-col gap-1'>
+                    <label htmlFor="name" className='text-[10px] font-bold font-nunito'><span className='text-xs'>*</span> EMAIL</label>
+                    <input type="text" name="name" id=""  className='h-7 bg-transparent border-b border-white w-full px-4 outline-none '/>
+                  </aside>
+                  <aside className='flex flex-col gap-1'>
+                    <label htmlFor="name" className='text-[10px] font-bold font-nunito'><span className='text-xs'>*</span> CHOOSE COUNTRY</label>
+                    <input type="text" name="name" id=""  className='h-7 bg-transparent border-b border-white w-full px-4 outline-none '/>
+                  </aside>
+                  
+                  <span className='text-brand_yellow font-nunito text-[9px] uppercase text-center py-2'>ruggedy01@gmail.com, smileglobal@gmail.com or +234703131979</span>
+                  <button className='self-start text-brand_yellow font-nunito border-b border-brand_yellow mt-1 '>
+                      SUBMIT
+                  </button>
+              </section>
+          </div>
+        </div>
+      </CentralModal>
 
       <Footer />
     </motion.div>

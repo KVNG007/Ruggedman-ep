@@ -23,6 +23,7 @@ export default {
         montserrat: ['Montserrat', 'sans-serif'],
         crimson: ['Crimson Text', 'serif'],
         nunito: ["Nunito Sans", 'sans-serif'],
+        roboto: ["Roboto", 'sans-serif'],
       },
       boxShadow: {
         '4xl': '0px 4px 16px 0px rgba(0, 0, 0, 0.10)',
