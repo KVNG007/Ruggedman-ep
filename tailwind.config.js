@@ -10,7 +10,7 @@ export default {
         grey: '#8A9099',
         accent: '#00423A',
         mild_green: '#00D59B',
-        light_green: '#EBFFF5',
+        light_green: '#005248',
         rare_green: '#017A591A',
 
         secondary: '#1D1D1F',
@@ -22,6 +22,7 @@ export default {
       fontFamily: {
         montserrat: ['Montserrat', 'sans-serif'],
         crimson: ['Crimson Text', 'serif'],
+        nunito: ["Nunito Sans", 'sans-serif'],
       },
       boxShadow: {
         '4xl': '0px 4px 16px 0px rgba(0, 0, 0, 0.10)',

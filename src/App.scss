@@ -26,6 +26,34 @@ html {
     opacity: 0;
 }
 
+.music-more {
+  background-image: url('/assets/music-dance.jpeg');
+  background-size: cover;
+  background-position: 10% 55%;
+}
+.about-more {
+  background-image: url('/assets/shoulder-bg.png');
+  background-size: cover;
+  background-position: 10% 30%;
+}
+
+.shticky {
+  position: sticky !important;
+  top: 0;
+}
+
+.head-text {
+  -webkit-text-stroke-width: 4;
+  -webkit-text-stroke-color: #F8B343;
+  font-family: "Crimson Text";
+  font-size: 50px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 120px; /* 48% */
+  letter-spacing: 0.96px;
+  text-transform: capitalize;
+}
+
 @keyframes flash {
     0% {
       left: 0 !important;

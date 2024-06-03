@@ -1,58 +1,13 @@
 import React from 'react'
-import { motion } from 'framer-motion'
-import Nav from '../../Components/Nav'
-import { Link } from 'react-router-dom'
-import { GrApple } from 'react-icons/gr'
-import { ImFacebook2 } from 'react-icons/im'
-import { FaInstagram, FaSpotify, FaTwitter, FaYoutube } from 'react-icons/fa'
-import { SiGmail } from 'react-icons/si'
 
-
-const Tour = () => {
+const Footer = () => {
   return (
-    <motion.div className='w-[100dvw] h-[100dvh] bg-white pt-[80px]'
-        initial={{opacity: 0}}
-        animate={{opacity: 1, transition: {duration: 0.6, ease: 'easeInOut'}}}
-        exit={{opacity: 0}}
-    >
-      <header className="relative px-[30px] h-[80dvh] pb-12 w-[100dvw] flex flex-col bg-white ">
-        <h1 className="text-[4em] font-[600] font-crimson text-brand_yellow text-center">
-          Tour
-        </h1>
-
-        <div className="w-full h-full flex flex-col pt-8 text-black">
-
-          <aside className=" w-full h-full flex flex-col items-center justify-center ">
-            <article className="flex flex-col items-center gap-4 ">
-              <h2 className="font-crimson text-[5em] text-black font-normal">
-                COMING SOON
-              </h2>
-
-              <div className="flex items-center flex-row gap-3 mt-2">
-                <span className='text-xs pr-3'>FOLLOW</span>
-                  <GrApple color='black' />
-                  <ImFacebook2 color='black' />
-                  <FaInstagram color='black' />
-                  <FaSpotify color='black' />
-                  <FaTwitter color='black' />
-                  <FaYoutube color='black' />
-                  <SiGmail color='black' />
-              </div>
-
-            </article>
-          </aside>
-
-        </div>
-
-
-      </header>
-
-      <footer className='relative bg-black'>
+    <footer className='relative bg-black'>
         <div className='relative z-20 h-[100dvh] w-full bg-black/90 flex flex-col justify-between'>
 
             <div className="w-full h-full flex flex-col  items-center justify-center">
                 <h1 className="font-bold font-crimson text-[3.8em] text-brand_yellow">
-                    Newsletter
+                    Booking & Enquires
                 </h1>
 
                 <section className="w-full max-w-[480px] flex flex-col gap-2 text-white">
@@ -68,7 +23,14 @@ const Tour = () => {
                         <label htmlFor="name" className='text-xs font-nunito'><span className='text-red-500 text-base'>*</span> PHONE</label>
                         <input type="text" name="name" id=""  className='h-6 bg-white w-full px-4 outline-none '/>
                     </aside>
-                    
+                    <aside className='flex flex-col gap-1'>
+                        <label htmlFor="name" className='text-xs font-nunito'><span className='text-red-500 text-base'>*</span> EVENT</label>
+                        <input type="text" name="name" id=""  className='h-6 bg-white w-full px-4 outline-none '/>
+                    </aside>
+                    <aside className='flex flex-col gap-1'>
+                        <label htmlFor="name" className='text-xs font-nunito'><span className='text-red-500 text-base'>*</span> COUNTRY</label>
+                        <input type="text" name="name" id=""  className='h-6 bg-white w-full px-4 outline-none '/>
+                    </aside>
                     <span className='text-brand_yellow font-nunito text-[9px] uppercase text-center py-2'>ruggedy01@gmail.com, smileglobal@gmail.com or +234703131979</span>
                     <button className='self-start text-brand_yellow font-nunito border-b border-brand_yellow mt-1 '>
                         SUBMIT
@@ -84,12 +46,11 @@ const Tour = () => {
         </div>
         
         <h1 className="absolute z-10 left-0 bottom-2 text-[8em] font-semibold font-crimson text-brand_yellow">
-            Newsletter
+            Booking & Enquires
         </h1>
 
-      </footer>
-    </motion.div>
+    </footer>
   )
 }
 
-export default Tour
+export default Footer
