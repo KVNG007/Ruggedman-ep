@@ -15,6 +15,10 @@ import gsap from 'gsap';
 import SlideComp from '../../Components/SlideComp';
 import Footer from '../../Components/Footer';
 import { CentralModal } from '../../Components/Modal';
+import { GrApple } from 'react-icons/gr';
+import { ImFacebook2 } from 'react-icons/im';
+import { FaInstagram, FaSpotify, FaTwitter, FaYoutube } from 'react-icons/fa';
+import { SiGmail } from 'react-icons/si';
 
 
 const Landing = () => {
@@ -25,7 +29,18 @@ const Landing = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
   const [showModal, setShowModal] = useState(false);
 
-  const slides = ["ookan", "eeji", 'eeta', 'eerin', 'aarun', 'eefa', 'eeje' , 'eejo'];
+  // const slides = ["ookan", "eeji", 'eeta', 'eerin', 'aarun', 'eefa', 'eeje' , 'eejo'];
+
+  const slides = [
+    { key: 'ookan-overlay', id : 'ookan', link: '/assets/albums/Album-1.png', content: {release_date: '2005', album_name: 'Thy Album Come', link: '' } },
+    { key: 'eeji-overlay', id : 'eeji', link: '/assets/albums/Album-2.png', content: {release_date: '2017', album_name: 'Rugeddy Baba', link: '' } },
+    { key: 'eeta-overlay', id : 'eeta', link: '/assets/albums/Album-1.png', content: {release_date: '2009', album_name: 'Untouchable', link: '' } },
+    { key: 'eerin-overlay', id : 'eerin', link: '/assets/albums/Album-1.png', content: {release_date: '2016', album_name: 'Money Making Music', link: '' } },
+    { key: 'aarun-overlay', id : 'aarun', link: '/assets/albums/Album-2.png', content: {release_date: '2024', album_name: 'Situation EP', link: '' } },
+    { key: 'eefa-overlay', id : 'eefa', link: '/assets/albums/Album-1.png', content: {release_date: '2022', album_name: "C'est La Vie", link: '' } },
+    { key: 'eeje-overlay', id : 'eeje', link: '/assets/albums/Album-2.png', content: {release_date: '2019', album_name: 'Dio Brando', link: '' } },
+    { key: 'eejo-overlay', id : 'eejo', link: '/assets/albums/Album-2.png', content: {release_date: '2021', album_name: 'Jojo Jotaro', link: '' } },
+  ];
 
   const Popup = (props) => {
     const {title, className, top, left} = props;
@@ -127,6 +142,38 @@ const Landing = () => {
             className="relative z-40 w-full mt-[70%] md:w-[62.5dvw] md:mt-16"
           />
         </div>
+        
+        <div className=' absolute right-8 top-[50%] translate-y-[-50%] bg-accent flex flex-col gap-4 p-2 py-4 rounded-md key'>
+          <Link to={`#`}>
+            <GrApple color='white' />
+          </Link>
+
+          <Link to={`#`}>
+            <ImFacebook2 color='white' />
+          </Link>
+
+          <Link to={`#`}>
+            <FaInstagram color='white' />
+          </Link>
+
+          <Link to={`#`}>
+            <FaSpotify color='white' />
+          </Link>
+
+          <Link to={`#`}>
+            <FaTwitter color='white' />
+          </Link>
+
+          <Link to={`#`}>
+            <FaYoutube color='white' />
+          </Link>
+
+          <Link to={`#`}>
+            <SiGmail color='white' />
+          </Link>
+
+        </div>
+
       </header>
 
       <section className="relative music w-full h-screen px-[30px] bg-white flex flex-col items-center justify-center">
@@ -150,10 +197,11 @@ const Landing = () => {
             return (
               <SwiperSlide key={i}>
                 <SlideComp
-                  key={i}
+                  slide={slide}
+                  key={slide?.id}
                   currentSlide={currentSlide}
                   index={i}
-                  identifier={slide}
+                  identifier={slide.id}
                 />
               </SwiperSlide>
             );

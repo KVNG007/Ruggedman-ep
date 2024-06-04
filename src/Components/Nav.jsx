@@ -7,8 +7,8 @@ const Nav = () => {
 
   
   return (
-    <nav className={`w-full fixed z-30 top-0 left-0 px-[30px] bg-transparent  flex flex-row items-center justify-between transition-all ease-in-out duration-[600ms]
-       ${location == '/' ? 'text-white bg-black' : 'text-black bg-white'}
+    <nav className={`w-full fixed z-50 top-0 left-0 px-[30px] bg-transparent  flex flex-row items-center justify-between transition-all ease-in-out duration-[600ms]
+       ${location == '/' ? 'text-white bg-blacks' : 'text-black bg-whites'}
     `}
     >
         <Link to={'/'}>

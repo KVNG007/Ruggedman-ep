@@ -8,22 +8,24 @@ html {
     box-sizing: border-box;
 }
 
-.overlay {
-    position: absolute;
-    content: " ";
-    height: 100%;
-    width: 0%;
-    position: absolute;
-    transform-origin: left;
-    top: 0;
-    left: 0;
-    z-index: 999;
-    background-color: rgb(0, 0, 0);
-    // transition: all 1s;
+.ookan-overlay, .ookan-overlay, .eeji-overlay, .eeta-overlay, .eerin-overlay, .aarun-overlay, .eefa-overlay, .eeje-overlay, .eejo-overlay {
+  position: absolute;
+  content: " ";
+  height: 100%;
+  width: 0%;
+  position: absolute;
+  transform-origin: left;
+  top: 0;
+  left: 0;
+  z-index: 999;
+  background-color: rgb(0, 0, 0);
+  // transition: all 1s;
 }
 
 .cover, .ookan, .eeji, .eeta, .eerin, .aarun, .eefa, .eeje, .eejo{
     opacity: 0;
+    background-size: cover;
+    background-position: 50% 50%;
 }
 
 .music-more {

@@ -1,7 +1,9 @@
 import gsap from 'gsap';
 import React, { useEffect, useRef } from 'react'
+import { Link } from 'react-router-dom';
 
-const SlideComp = ({currentSlide, index, identifier}) => {
+const SlideComp = ({currentSlide, slide, index, identifier}) => {
+
     const tl2 = useRef();
     const overlayRef = useRef();
     
@@ -13,11 +15,11 @@ const SlideComp = ({currentSlide, index, identifier}) => {
 
 
         //2nd TL
-        tl2.current.to(overlayRef.current, {
+        tl2.current.to(`.${slide?.key}`, {
             width:"0%",
             duration:0.25,
             ease:'expo.inOut'
-        }).to(overlayRef.current,{
+        }).to(`.${slide?.key}`,{
             width:"100%",
             right:0,
             left: 'unset',
@@ -27,7 +29,7 @@ const SlideComp = ({currentSlide, index, identifier}) => {
             opacity: 1,
             duration:0,
         })
-        .to(overlayRef.current,{
+        .to(`.${slide?.key}`,{
             width:"0%",
             ease:'expo.inOut',
             // duration: 0.25
@@ -46,12 +48,34 @@ const SlideComp = ({currentSlide, index, identifier}) => {
 
     return (
         <div key={index} className="image-holder h-full w-full  flex flex-row items-center justify-center">
-            <div className="relative bg-red-500 h-full aspect-square flex items-center justify-center">
-                <span className='overlay' ref={overlayRef}></span>
-                <p className={`${identifier}`}>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Id, culpa.</p>
+            <div className="relative h-full aspect-square flex items-center justify-center">
+                <span className={`${slide?.key}`} ></span>
+
+                <p className={`${identifier} h-full w-full `} style={{backgroundImage: `url(${slide?.link})`}}>
+                    
+
+                </p>
             </div>
-            <div className="bg-purple-200 h-full aspect-square flex items-center justify-center">
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Id, culpa.</p>
+
+
+            <div className="bg-white h-full aspect-square flex flex-col items-start justify-center pl-[80px] text-black">
+                <div className="w-full flex flex-col">
+                    <p className='font-nunito text-xs'>Released {slide?.content?.release_date}</p>
+
+                    <h2 className={`font-crimson text-[1.75em] py-2 relative z-30 bg-white transition-all ease-in-out duration-300 delay-1000
+                        ${currentSlide -1 == index ? 'mt-0 mb-0' : 'mt-[-60px] mb-[-50px]'}
+                    `}                    
+                    >
+                        {slide?.content?.album_name}
+                    </h2>
+
+                    <Link className={`w-max font-nunito text-sm font-semibold border-b border-black  transition-all ease-in-out duration-300 delay-500
+                        
+                    `}
+                    > 
+                        STREAM / DOWNLOAD
+                    </Link>
+                </div>
             </div>
         </div>
     )
