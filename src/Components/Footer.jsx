@@ -3,10 +3,10 @@ import React from 'react'
 const Footer = () => {
   return (
     <footer className='relative bg-black'>
-        <div className='relative z-20 h-[100dvh] w-full bg-black/90 flex flex-col justify-between'>
+        <div className='relative z-20 h-[100dvh] w-full  bg-black/90 flex flex-col justify-between'>
 
-            <div className="w-full h-full flex flex-col  items-center justify-center">
-                <h1 className="font-bold font-crimson text-[3.8em] text-brand_yellow">
+            <div className="w-full h-full px-[30px] flex flex-col  items-center justify-center">
+                <h1 className="font-bold font-crimson text-[3em] text-center md:text-[3.8em] text-brand_yellow">
                     Booking & Enquires
                 </h1>
 
@@ -38,14 +38,14 @@ const Footer = () => {
                 </section>
             </div>
 
-            <div className="w-full border-t-[0.1px] border-white py-4 text-[10px] copy flex items-center justify-center">
-                <h3 className="text-white uppercase font-nunito flex flex-row items-center justify-center gap-3 font-light">
+            <div className="w-full border-none md:border-t-[0.1px] border-white py-4 text-[10px] copy flex items-center justify-center">
+                <h3 className="text-white uppercase font-nunito flex flex-wrap md:flex-row  items-center justify-center gap-3 font-light">
                     <span>Copyright ruggedman &copy;</span> <span>Privacy Policy</span> <span>Terms & Conditions</span> <span>Cookie Choices</span> Do Not Sell My Personal Information
                 </h3>
             </div>
         </div>
         
-        <h1 className="absolute z-10 left-0 bottom-2 text-[8em] font-semibold font-crimson text-brand_yellow">
+        <h1 className="absolute z-10 left-0 bottom-2 text-[4em] md:text-[8em] font-semibold font-crimson text-brand_yellow">
             Booking & Enquires
         </h1>
 

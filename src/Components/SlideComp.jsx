@@ -47,7 +47,7 @@ const SlideComp = ({currentSlide, slide, index, identifier}) => {
 
 
     return (
-        <div key={index} className="image-holder h-full w-full  flex flex-row items-center justify-center">
+        <div key={index} className="image-holder h-full w-full  flex flex-col md:flex-row items-center justify-center">
             <div className="relative h-full aspect-square flex items-center justify-center">
                 <span className={`${slide?.key}`} ></span>
 
@@ -58,7 +58,7 @@ const SlideComp = ({currentSlide, slide, index, identifier}) => {
             </div>
 
 
-            <div className="bg-white h-full aspect-square flex flex-col items-start justify-center pl-[80px] text-black">
+            <div className="bg-white h-full aspect-square flex flex-col items-start justify-center text-center pl-0 md:pl-[80px] text-black">
                 <div className="w-full flex flex-col">
                     <p className='font-nunito text-xs'>Released {slide?.content?.release_date}</p>
 
@@ -69,12 +69,14 @@ const SlideComp = ({currentSlide, slide, index, identifier}) => {
                         {slide?.content?.album_name}
                     </h2>
 
+                    <div className="w-full flex items-center justify-center md:justify-start">
                     <Link className={`w-max font-nunito text-sm font-semibold border-b border-black  transition-all ease-in-out duration-300 delay-500
                         
-                    `}
-                    > 
-                        STREAM / DOWNLOAD
-                    </Link>
+                        `}
+                        > 
+                            STREAM / DOWNLOAD
+                        </Link>
+                    </div>
                 </div>
             </div>
         </div>

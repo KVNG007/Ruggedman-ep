@@ -143,7 +143,7 @@ const Landing = () => {
           />
         </div>
         
-        <div className=' absolute right-8 top-[50%] translate-y-[-50%] bg-accent flex flex-col gap-4 p-2 py-4 rounded-md key'>
+        <div className=' absolute right-8 top-[50%] translate-y-[-50%] bg-accent hidden :flex flex-col gap-4 p-2 py-4 rounded-md key'>
           <Link to={`#`}>
             <GrApple color='white' />
           </Link>
@@ -176,8 +176,8 @@ const Landing = () => {
 
       </header>
 
-      <section className="relative music w-full h-screen px-[30px] bg-white flex flex-col items-center justify-center">
-        <h1 className="text-[5em] font-[600] font-crimson text-brand_yellow">
+      <section className="relative music w-full h-screen px-[30px] bg-white flex flex-col items-center justify-around md:justify-center">
+        <h1 className="text-[3.5em] md:text-[5em] font-[600] font-crimson text-brand_yellow">
           Music
         </h1>
         <Swiper
@@ -208,17 +208,18 @@ const Landing = () => {
           })}
 
           {/* navigation navigation navigation navigation navigation navigation */}
-          <div className="h-max absolute z-20 bottom-0 left-[50%] translate-x-[-sa50%] flex flex-col gap-[2px]">
-            <div className="prev eswiper-button-prev h-10 aspect-square bg-black flex items-center justify-center">
+          <div className="h-max absolute z-20 bottom-0 left-[50%] translate-x-[-50%] md:translate-x-[0%] flex flex-row items-center md:flex-col gap-3  md:gap-[2px]">
+            <div className="prev eswiper-button-prev h-8 md:h-10 aspect-square bg-black flex items-center justify-center">
               <BsChevronLeft size={25} color="white" />
             </div>
-            <div className="next eswiper-button-next h-10 aspect-square bg-black flex items-center justify-center">
+
+            <div className="next eswiper-button-next h-8 md:h-10 aspect-square bg-black flex items-center justify-center">
               <BsChevronRight size={25} color="white" />
             </div>
           </div>
         </Swiper>
 
-        <div className="flex flex-row items-center justify-center gap-2 mt-4">
+        <div className="flex flex-row items-center justify-center gap-2 -translate-y-[40px] md:translate-y-0 md:mt-4">
           {slides.map((slide, i) => {
             return (
               <span
@@ -247,8 +248,8 @@ const Landing = () => {
         </Link>
       </section>
 
-      <section className="relative px-[30px] h-screen w-[100dvw] py-[1s2dvh] flex flex-col items-center justify-around bg-black text-center">
-        <h1 className="text-[4em] font-[600] font-crimson text-brand_yellow">
+      <section className="relative px-[30px] h-max md:h-screen w-[100dvw] py-6 md:py-0 flex flex-col items-center justify-around bg-black text-center">
+        <h1 className="text-[3.25em] md:text-[4em] py-7 md:py-0 font-[600] font-crimson text-brand_yellow">
           Videos
         </h1>
 
@@ -269,19 +270,19 @@ const Landing = () => {
         </Link>
       </section>
 
-      <section className="relative  h-[100dvh] w-[100dvw] flex flex-col bg-white ">
-        <h1 className="text-[4em] font-[600] font-crimson text-brand_yellow mt-5 text-center">
+      <section className="relative  min-h-[100dvh] w-[100dvw] flex flex-col bg-white ">
+        <h1 className="text-[3.5em] md:text-[4em] font-[600] font-crimson text-brand_yellow mt-5 text-center">
           About
         </h1>
 
-        <div className="w-full h-full flex flex-row bg-fauchsia-500 text-black">
-          <aside className="w-[45%] h-full flex items-end justify-start">
-            <img src="/assets/rugged-about.png" alt="" className='w-[82%] ' />
+        <div className="w-full h-full flex flex-col md:flex-row bg-fauchsia-500 text-black">
+          <aside className="w-full md:w-[45%] h-full flex items-end justify-start">
+            <img src="/assets/rugged-about.png" alt="" className='w-full md:w-[82%] ' />
           </aside>
 
-          <aside className="w-[55%] h-full flex items-center justify-start">
-            <article className="flex flex-col gap-2 max-w-[500px]">
-              <h2 className="font-crimson font-semibold text-[3.5em]">
+          <aside className="w-full md:w-[55%] h-full flex items-center justify-start px-[24px] md:px-0">
+            <article className="flex flex-col items-center gap-12 md:gap-2 max-w-[500px]">
+              <h2 className="font-crimson font-semibold text-[3.5em] pt-12 md:pt-0">
                 Ruggedman
               </h2>
               <p className="text-[14px] leading-6">
@@ -289,7 +290,7 @@ const Landing = () => {
                 Ugochukwu Stevens and being 4th in a line of five children was
                 tough (talk about attain to) .In addition, moving to Lagos...
               </p>
-              <Link to={`/about`} className="w-max text-white text-[10px] bg-accent font-montserrat px-3 h-8 mt-2 flex items-center justify-center rounded-md">
+              <Link to={`/about`} className="w-max text-white text-[10px] bg-accent font-montserrat px-3 mb-8 md:mb-0 h-8 mt-2 flex items-center justify-center rounded-md">
                 LEARN MORE
               </Link>
             </article>

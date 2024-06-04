@@ -23,6 +23,10 @@ a, ul, ol, li {
   color: inherit;
 }
 
+.nav-link {
+  mix-blend-mode:difference !important;
+}
+
 
 @tailwind base;
 @tailwind components;

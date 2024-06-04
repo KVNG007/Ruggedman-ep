@@ -16,10 +16,10 @@ const Nav = () => {
         </Link>
 
         <div className="hidden md:flex flex-row items-center gap-6 font-normal text-sm">
-          <Link to={`/music`} className={`transition-all ease-in-out duration-300 ${location == '/music' ? 'font-bold text-brand_yellow' : ''}`} >MUSIC</Link>
-          <Link to={`/videos`} className={`transition-all ease-in-out duration-300 ${location == '/videos' ? 'font-bold text-brand_yellow' : ''}`} >VIDEOS</Link>
-          <Link to={`/tour`} className={`transition-all ease-in-out duration-300 ${location == '/tour' ? 'font-bold text-brand_yellow' : ''}`} >TOUR</Link>
-          <Link to={`/about`} className={`transition-all ease-in-out duration-300 ${location == '/about' ? 'font-bold text-brand_yellow' : ''}`} >ABOUT</Link>
+          <Link to={`/music`} className={`nav-link transition-all ease-in-out duration-300 ${location == '/music' ? 'font-bold text-brand_yellow' : ''}`} >MUSIC</Link>
+          <Link to={`/videos`} className={`nav-link transition-all ease-in-out duration-300 ${location == '/videos' ? 'font-bold text-brand_yellow' : ''}`} >VIDEOS</Link>
+          <Link to={`/tour`} className={`nav-link transition-all ease-in-out duration-300 ${location == '/tour' ? 'font-bold text-brand_yellow' : ''}`} >TOUR</Link>
+          <Link to={`/about`} className={`nav-link transition-all ease-in-out duration-300 ${location == '/about' ? 'font-bold text-brand_yellow' : ''}`} >ABOUT</Link>
         </div>
     </nav>
   )
