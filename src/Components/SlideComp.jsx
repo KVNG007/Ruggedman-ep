@@ -59,7 +59,7 @@ const SlideComp = ({currentSlide, slide, index, identifier}) => {
 
 
             <div className="bg-white h-full aspect-square flex flex-col items-start justify-center text-center pl-0 md:pl-[80px] text-black">
-                <div className="w-full flex flex-col">
+                <div className="w-full flex flex-col items-center md:items-start ">
                     <p className='font-nunito text-xs'>Released {slide?.content?.release_date}</p>
 
                     <h2 className={`font-crimson text-[1.75em] py-2 relative z-30 bg-white transition-all ease-in-out duration-300 delay-1000

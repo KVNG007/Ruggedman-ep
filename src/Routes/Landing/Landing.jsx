@@ -143,7 +143,7 @@ const Landing = () => {
           />
         </div>
         
-        <div className=' absolute right-8 top-[50%] translate-y-[-50%] bg-accent hidden :flex flex-col gap-4 p-2 py-4 rounded-md key'>
+        <div className=' absolute right-8 top-[50%] translate-y-[-50%] bg-accent hidden md:flex flex-col gap-4 p-2 py-4 rounded-md key'>
           <Link to={`#`}>
             <GrApple color='white' />
           </Link>
@@ -275,13 +275,13 @@ const Landing = () => {
           About
         </h1>
 
-        <div className="w-full h-full flex flex-col md:flex-row bg-fauchsia-500 text-black">
+        <div className="w-full h-full flex flex-col md:flex-row items-center  text-black">
           <aside className="w-full md:w-[45%] h-full flex items-end justify-start">
             <img src="/assets/rugged-about.png" alt="" className='w-full md:w-[82%] ' />
           </aside>
 
-          <aside className="w-full md:w-[55%] h-full flex items-center justify-start px-[24px] md:px-0">
-            <article className="flex flex-col items-center gap-12 md:gap-2 max-w-[500px]">
+          <aside className="w-full md:w-[55%] h-full flex items-center justify-start md:justify-start px-[24px] md:px-0">
+            <article className="h-full flex flex-col items-center md:items-start justify-center gap-12 md:gap-2 max-w-[500px]">
               <h2 className="font-crimson font-semibold text-[3.5em] pt-12 md:pt-0">
                 Ruggedman
               </h2>

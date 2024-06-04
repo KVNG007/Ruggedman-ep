@@ -38,7 +38,7 @@ const Footer = () => {
                 </section>
             </div>
 
-            <div className="w-full border-none md:border-t-[0.1px] border-white py-4 text-[10px] copy flex items-center justify-center">
+            <div className="w-full border-t-none md:border-t-[0.1px] px-[25px] border-white py-4 text-[10px] copy flex items-center justify-center">
                 <h3 className="text-white uppercase font-nunito flex flex-wrap md:flex-row  items-center justify-center gap-3 font-light">
                     <span>Copyright ruggedman &copy;</span> <span>Privacy Policy</span> <span>Terms & Conditions</span> <span>Cookie Choices</span> Do Not Sell My Personal Information
                 </h3>
