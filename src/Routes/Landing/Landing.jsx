@@ -104,6 +104,7 @@ const Landing = () => {
       exit={{ opacity: 0 }}
     >
       {/* <Nav /> */}
+      
       <header className="landing relative w-full h-[75dvh] pt-10 md:pt-0 md:h-screen bg-black px-[4%] ">
         <img
           src="/assets/ruggedman-copy-1.png"
@@ -148,11 +149,11 @@ const Landing = () => {
             <GrApple color='white' />
           </Link>
 
-          <Link to={`#`}>
+          <Link to={`https://www.facebook.com/Ruggedman.Opomulero?mibextid=ZbWKwLf`}>
             <ImFacebook2 color='white' />
           </Link>
 
-          <Link to={`#`}>
+          <Link to={`https://www.instagram.com/ruggedybaba?igsh=b2FydGxhcHk3bnJr`}>
             <FaInstagram color='white' />
           </Link>
 
@@ -160,11 +161,11 @@ const Landing = () => {
             <FaSpotify color='white' />
           </Link>
 
-          <Link to={`#`}>
+          <Link to={`https://x.com/RuggedyBaba?t=PSeWnDqxOHQBs1ezATyIgA&s=09`}>
             <FaTwitter color='white' />
           </Link>
 
-          <Link to={`#`}>
+          <Link to={`https://youtube.com/@ruggedmantv?si=fZWAD1Fzls1zkwoz`}>
             <FaYoutube color='white' />
           </Link>
 

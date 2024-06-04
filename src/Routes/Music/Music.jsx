@@ -6,42 +6,74 @@ import { GrApple } from 'react-icons/gr'
 import { ImFacebook2 } from 'react-icons/im'
 import { FaInstagram, FaSpotify, FaTwitter, FaYoutube } from 'react-icons/fa'
 import { SiGmail } from 'react-icons/si'
+import Footer from '../../Components/Footer'
 
 const Music = () => {
   return (
     <motion.div className='w-[100dvw] h-[100dvh] bg-white pt-[60px]'
-        initial={{opacity: 0}}
-        animate={{opacity: 1, transition: {duration: 0.6, ease: 'easeInOut'}}}
-        exit={{opacity: 0}}
+      initial={{opacity: 0}}
+      animate={{opacity: 1, transition: {duration: 0.6, ease: 'easeInOut'}}}
+      exit={{opacity: 0}}
     >
 
       <header className="relative px-[30px] min-h-[70dvh] pb-12 w-[100dvw] flex flex-col bg-white ">
-        <h1 className="text-[4em] font-[600] font-crimson text-brand_yellow text-center">
+        <h1 className="pt-4 text-[3em] md:text-[4em] font-[600] font-crimson text-brand_yellow text-center">
           Music
         </h1>
 
-        <div className="w-full h-full flex flex-row pt-8 text-black">
-          <aside className="w-[55%] h-full flex items-center justify-end">
+        <div className="w-full h-full flex flex-col md:flex-row items-center pt-8 text-black gap-14">
+          <aside className="w-full  md:w-[55%] h-full flex items-center justify-end">
             <img src="/assets/music.png" alt="" className='w-full max-w-[680px] ' />
           </aside>
 
-          <aside className=" w-[35%] h- flex flex-col items-start justify-center pl-[150px]">
-            <article className="flex flex-col gap-4 max-w-[500px]">
+          <aside className=" w-[35%] h-full flex flex-col items-center md:items-start justify-center pl-0 md:pl-[150px]">
+            <article className="h-full flex flex-col items-center  md:items-start gap-6 md:gap-4 max-w-[500px]">
               <h2 className="font-nunito text-[18px] text-black font-bold">
                 SITUATION EP
               </h2>
               <Link className="w-max text-light_green text-[12px] bg-transparent border border-light_green font-montserrat font-medium px-8 h-9 mt-2 flex items-center justify-center rounded-md">
                 LISTEN NOW
               </Link>
-              <div className="flex items-center flex-row gap-3 mt-2">
+              <div className="flex flex-col md:flex-row items-center gap-3 mt-2">
                 <span className='text-xs pr-3'>SHARE</span>
-                  <GrApple color='black' />
+
+                <div className="flex items-center flex-row gap-3">
+                  {/* <GrApple color='black' />
                   <ImFacebook2 color='black' />
                   <FaInstagram color='black' />
                   <FaSpotify color='black' />
                   <FaTwitter color='black' />
                   <FaYoutube color='black' />
-                  <SiGmail color='black' />
+                  <SiGmail color='black' /> */}
+                  <a href={`#`} targest='_blank' >
+                    <GrApple color='black' />
+                  </a>
+
+                  <a href={`https://www.facebook.com/Ruggedman.Opomulero?mibextid=ZbWKwLf`} target='_blank' >
+                    <ImFacebook2 color='black' />
+                  </a>
+
+                  <a href={`https://www.instagram.com/ruggedybaba?igsh=b2FydGxhcHk3bnJr`} target='_blank' >
+                    <FaInstagram color='black' />
+                  </a>
+
+                  <a href={`#`} targest='_blank' >
+                    <FaSpotify color='black' />
+                  </a>
+
+                  <a href={`https://x.com/RuggedyBaba?t=PSeWnDqxOHQBs1ezATyIgA&s=09`} target='_blank' >
+                    <FaTwitter color='black' />
+                  </a>
+
+                  <a href={`https://youtube.com/@ruggedmantv?si=fZWAD1Fzls1zkwoz`} target='_blank' >
+                    <FaYoutube color='black' />
+                  </a>
+
+                  <a href={`#`} targest='_blank' >
+                    <SiGmail color='black' />
+                  </a>
+
+                </div>
               </div>
 
             </article>
@@ -60,7 +92,7 @@ const Music = () => {
         </div>
       </section>
 
-      <footer className='relative bg-black'>
+      {/* <footer className='relative bg-black'>
         <div className='relative z-20 h-[100dvh] w-full bg-black/90 flex flex-col justify-between'>
 
             <div className="w-full h-full flex flex-col  items-center justify-center">
@@ -100,7 +132,8 @@ const Music = () => {
             Newsletter
         </h1>
 
-      </footer>
+      </footer> */}
+      <Footer />
     </motion.div>
   )
 }

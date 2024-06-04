@@ -9,13 +9,13 @@ import Footer from '../../Components/Footer'
 const About = () => {
   return (
     <motion.div
-      className="relative overflow-sauto bg-white"
+      className="relative bg-white"
       initial={{ opacity: 0 }}
       animate={{ opacity: 1, transition: { duration: 0.6, ease: "easeInOut" } }}
       exit={{ opacity: 0 }}
     >
-      <section className="shticky  h-[50dvh] md:h-[90dvh] w-[100dvw] flex flex-col bg-white pt-[70px]  md:pt-[50px] ">
-        <h1 className="text-[3em] md:text-[4em] font-[600] font-crimson text-brand_yellow my-3 text-center">
+      <section className="shticky h-[90dvh] w-[100dvw] flex flex-col bg-white  pt-[50px] ">
+        <h1 className="text-[4em] font-[600] font-crimson text-brand_yellow my-3 text-center">
           About
         </h1>
 
@@ -30,11 +30,9 @@ const About = () => {
         </div>
       </section>
 
-
-
-      <section className="relative h-full md:h-[85dvh] w-[100dvw] flex flex-col bg-black ">
-        <div className="w-full h-full flex flex-col md:flex-row bg-white text-black">
-          <aside className="w-full md:w-[35%] bg-black h-full flex items-end justify-start">
+      <section className="relative h-[85dvh] w-[100dvw] flex flex-col bg-black ">
+        <div className="w-full h-full flex flex-row bg-white text-black">
+          <aside className="w-[35%] bg-black h-full flex items-end justify-start">
             <img
               src="/assets/rugged-shoulder.png"
               alt=""
@@ -42,8 +40,8 @@ const About = () => {
             />
           </aside>
 
-          <aside className="w-full md:w-[65%] md:pl-[40px] h-full flex items-center justify-start font-nunito">
-            <article className="flex flex-col gap-4 md:gap-10 py-6 md:py-0  px-[30px] md:pr-[100px] md:pl-0">
+          <aside className="w-[65%] pl-[40px] h-full flex items-center justify-start font-nunito">
+            <article className="flex flex-col gap-10 max-w-[5ssd00px] pr-[100px]">
               <p className="text-[15px] leading-6">
                 This is Ruggedman, one of Nigeria's most celebrated hip-hop
                 artists. Born Michael Ugochukwu Stevens and being 4th in a line
@@ -80,17 +78,15 @@ const About = () => {
         </div>
       </section>
 
-
-
       <section className="shticky about-more w-full h-[400px] font-nunito">
-        <div className="h-full w-full px-3 bg-black/80 flex items-end md:items-center justify-center">
-          <img src="/assets/about-shtick.png" alt="" className="w-full md:w-[unset] h-max md:h-full" />
+        <div className="h-full w-full px-3 bg-black/80 flex items-center justify-center">
+          <img src="/assets/about-shtick.png" alt="" className=" h-full" />
         </div>
       </section>
 
-      <section className="relative h-max md:h-[120dvh] w-[100dvw] flex flex-col pt-8  bg-white">
-        <div className="w-full h-full flex flex-col-reverse md:flex-row bg-white text-black">
-          <aside className="w-full md:w-[60%] pl-[30px] pr-[30px] md:pl-[60px] md:pr-0 py-4 md:py-0 h-full flex items-center justify-start font-nunito">
+      <section className="relative h-[120dvh] w-[100dvw] flex flex-col bg-black pt-8">
+        <div className="w-full h-full flex flex-row bg-white text-black">
+          <aside className="w-[60%] pl-[60px] h-full flex items-center justify-start font-nunito">
             <article className="flex flex-col gap-8 max-w-[5ssd00px] ">
               <p className="text-[15px] leading-6">
                 It may have seemed a bit odd at the time, seeing as most other
@@ -141,8 +137,8 @@ const About = () => {
             </article>
           </aside>
 
-          <aside className="w-full md:w-[40%] bg-white h-full flex items-end justify-end">
-            <img src="/assets/rugged-bw.png" alt="" className=" w-full md:w-[90%] " />
+          <aside className="w-[40%] bg-white h-full flex items-end justify-end">
+            <img src="/assets/rugged-bw.png" alt="" className="w-[90%] " />
           </aside>
         </div>
       </section>

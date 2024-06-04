@@ -6,6 +6,7 @@ import { GrApple } from 'react-icons/gr'
 import { ImFacebook2 } from 'react-icons/im'
 import { FaInstagram, FaSpotify, FaTwitter, FaYoutube } from 'react-icons/fa'
 import { SiGmail } from 'react-icons/si'
+import { Footer2 } from '../../Components/Footer'
 
 
 const Tour = () => {
@@ -15,28 +16,55 @@ const Tour = () => {
         animate={{opacity: 1, transition: {duration: 0.6, ease: 'easeInOut'}}}
         exit={{opacity: 0}}
     >
-      <header className="relative px-[30px] h-[80dvh] pb-12 w-[100dvw] flex flex-col bg-white ">
+      <header className="relative h-[80dvh] pb-12 w-full flex flex-col bg-white ">
         <h1 className="text-[4em] font-[600] font-crimson text-brand_yellow text-center">
           Tour
         </h1>
 
-        <div className="w-full h-full flex flex-col pt-8 text-black">
+        <div className="w-full h-full flex flex-col pt-8 text-black ">
 
           <aside className=" w-full h-full flex flex-col items-center justify-center ">
             <article className="flex flex-col items-center gap-4 ">
-              <h2 className="font-crimson text-[5em] text-black font-normal">
+              <h2 className="font-crimson text-[2em] md:text-[5em] whitespace-nowrap text-black font-normal">
                 COMING SOON
               </h2>
 
               <div className="flex items-center flex-row gap-3 mt-2">
                 <span className='text-xs pr-3'>FOLLOW</span>
-                  <GrApple color='black' />
+                  {/* <GrApple color='black' />
                   <ImFacebook2 color='black' />
                   <FaInstagram color='black' />
                   <FaSpotify color='black' />
                   <FaTwitter color='black' />
                   <FaYoutube color='black' />
-                  <SiGmail color='black' />
+                  <SiGmail color='black' /> */}
+                  <a href={`#`} targest='_blank' >
+                    <GrApple color='black' />
+                  </a>
+
+                  <a href={`https://www.facebook.com/Ruggedman.Opomulero?mibextid=ZbWKwLf`} target='_blank' >
+                    <ImFacebook2 color='black' />
+                  </a>
+
+                  <a href={`https://www.instagram.com/ruggedybaba?igsh=b2FydGxhcHk3bnJr`} target='_blank' >
+                    <FaInstagram color='black' />
+                  </a>
+
+                  <a href={`#`} targest='_blank' >
+                    <FaSpotify color='black' />
+                  </a>
+
+                  <a href={`https://x.com/RuggedyBaba?t=PSeWnDqxOHQBs1ezATyIgA&s=09`} target='_blank' >
+                    <FaTwitter color='black' />
+                  </a>
+
+                  <a href={`https://youtube.com/@ruggedmantv?si=fZWAD1Fzls1zkwoz`} target='_blank' >
+                    <FaYoutube color='black' />
+                  </a>
+
+                  <a href={`#`} targest='_blank' >
+                    <SiGmail color='black' />
+                  </a>
               </div>
 
             </article>
@@ -47,7 +75,7 @@ const Tour = () => {
 
       </header>
 
-      <footer className='relative bg-black'>
+      {/* <footer className='relative bg-black'>
         <div className='relative z-20 h-[100dvh] w-full bg-black/90 flex flex-col justify-between'>
 
             <div className="w-full h-full flex flex-col  items-center justify-center">
@@ -87,7 +115,8 @@ const Tour = () => {
             Newsletter
         </h1>
 
-      </footer>
+      </footer> */}
+      <Footer2 />
     </motion.div>
   )
 }

@@ -1,6 +1,7 @@
 import React from 'react'
 import { motion } from 'framer-motion'
 import Nav from '../../Components/Nav'
+import {Footer2} from "../../Components/Footer"
 
 import { Link } from 'react-router-dom'
 import { GrApple } from 'react-icons/gr'
@@ -16,8 +17,8 @@ const Videos = () => {
         animate={{opacity: 1, transition: {duration: 0.6, ease: 'easeInOut'}}}
         exit={{opacity: 0}}
     >
-      <header className="relative px-[30px] mt-8 h-screen w-[100dvw] flex flex-col items-center justify-around bg-black text-center">
-        <h1 className="text-[4em] font-[600] font-crimson text-brand_yellow">
+      <header className="relative px-[30px] py-12 md:py-0 mt-8 h-max md:h-screen w-[100dvw] flex flex-col items-center justify-around bg-black text-center">
+        <h1 className=" text-[3em] md:text-[4em] pb-6 md:pb-0 font-[600] font-crimson text-brand_yellow">
           Videos
         </h1>
 
@@ -38,14 +39,14 @@ const Videos = () => {
         </Link> */}
       </header>
 
-      <section className="relative px-[30px] min-h-[80dvh] w-[100dvw] flex flex-col items-center justify-center bg-white ">
+      <section className="relative px-[30px] h-[480px] md:h-[80dvh] w-[100dvw] flex flex-col items-center justify-center bg-white ">
 
-        <div className="w-full h-full flex flex-row  text-black">
-          <aside className="w-[55%] h-full flex items-center justify-end">
+        <div className="w-full h-full flex flex-col md:flex-row justify-around text-black">
+          <aside className="w-full md:w-[55%] h- flex items-center justify-center md:justify-end">
             <img src="/assets/video-dance.png" alt="" className='w-full max-w-[680px] ' />
           </aside>
 
-          <aside className=" w-[35%] h- flex flex-col items-start justify-center pl-[150px]">
+          <aside className="w-full md:w-[35%] h- flex flex-col items-center md:items-start justify-center pl-0 md:pl-[150px]">
             <article className="flex flex-col gap-4 max-w-[500px]">
               <h2 className="font-nunito text-[18px] text-black font-bold">
                 SITUATION EP
@@ -70,7 +71,7 @@ const Videos = () => {
         </div>
       </section>
 
-      <footer className='relative bg-black'>
+      {/* <footer className='relative bg-black'>
         <div className='relative z-20 h-[100dvh] w-full bg-black/90 flex flex-col justify-between'>
 
             <div className="w-full h-full flex flex-col  items-center justify-center">
@@ -110,7 +111,8 @@ const Videos = () => {
             Newsletter
         </h1>
 
-      </footer>
+      </footer> */}
+      <Footer2 />
     </motion.div>
   )
 }

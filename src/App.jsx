@@ -3,6 +3,7 @@ import './App.scss'
 import { Navigate, Route, Routes, useLocation } from 'react-router-dom'
 import Nav from './Components/Nav'
 import AnimatedRoutes from './Components/AnimatedRoutes'
+import ScrollToTop from './Components/ScrollToTop'
 
 
 function App() {
@@ -27,7 +28,7 @@ function App() {
   
   return (
     <main className={`App `}>
-    {/* <main className={`App ${bg}`}> */}
+      <ScrollToTop />
       <Nav />
       <AnimatedRoutes />
     

@@ -3,6 +3,60 @@ html {
     scroll-behavior: smooth !important;
 }
 
+.App {
+  // overflow-x: hidden;
+  margin: 0;
+  padding: 0;
+}
+
+
+.ham {
+  position: fixed;
+  top: 1.5em;
+  left:1.5em;
+  padding: 5px;
+  cursor: pointer;
+  border-radius: 1em;
+  z-index: 999;
+  
+
+  span {
+    width: 35px;
+    margin: 2px 0px;
+    height:2px;
+    transition: all .3s ease-in-out;
+
+    
+
+  }
+ 
+}
+
+.ham-active{
+  // box-shadow: 2px 2px 5px 0px rgba(0, 0, 0, 0.5); g54
+  span {
+
+    &:nth-child(1) {
+      transform-origin:left 50% ;
+      // transform:  rotate(45deg) ;
+      transform:  rotate(45deg) translateY(-100%);
+    }
+
+    &:nth-child(3) {        
+      transform-origin:left 50% ;
+      // width:38px;
+      transform:  rotate(-45deg) translateY(100%);
+    }
+
+    &:nth-child(2) {
+      transform: translateX(-10px);
+      opacity: 0;
+    }
+
+  }
+}
+
+
 
 *{
     box-sizing: border-box;
