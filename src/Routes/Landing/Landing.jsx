@@ -34,12 +34,9 @@ const Landing = () => {
   const slides = [
     { key: 'ookan-overlay', id : 'ookan', link: '/assets/albums/Album-1.png', content: {release_date: '2005', album_name: 'Thy Album Come', link: '' } },
     { key: 'eeji-overlay', id : 'eeji', link: '/assets/albums/Album-2.png', content: {release_date: '2017', album_name: 'Rugeddy Baba', link: '' } },
-    { key: 'eeta-overlay', id : 'eeta', link: '/assets/albums/Album-1.png', content: {release_date: '2009', album_name: 'Untouchable', link: '' } },
+    { key: 'eeta-overlay', id : 'eeta', link: '/assets/albums/Album-3.jpg', content: {release_date: '2009', album_name: 'Untouchable', link: '' } },
     { key: 'eerin-overlay', id : 'eerin', link: '/assets/albums/Album-1.png', content: {release_date: '2016', album_name: 'Money Making Music', link: '' } },
-    { key: 'aarun-overlay', id : 'aarun', link: '/assets/albums/Album-2.png', content: {release_date: '2024', album_name: 'Situation EP', link: '' } },
-    { key: 'eefa-overlay', id : 'eefa', link: '/assets/albums/Album-1.png', content: {release_date: '2022', album_name: "C'est La Vie", link: '' } },
-    { key: 'eeje-overlay', id : 'eeje', link: '/assets/albums/Album-2.png', content: {release_date: '2019', album_name: 'Dio Brando', link: '' } },
-    { key: 'eejo-overlay', id : 'eejo', link: '/assets/albums/Album-2.png', content: {release_date: '2021', album_name: 'Jojo Jotaro', link: '' } },
+    { key: 'aarun-overlay', id : 'aarun', link: '/assets/albums/Album-5.jpg', content: {release_date: '2024', album_name: 'Situation EP', link: '' } }
   ];
 
   const Popup = (props) => {
@@ -177,12 +174,12 @@ const Landing = () => {
 
       </header>
 
-      <section className="relative music w-full h-screen px-[30px] bg-white flex flex-col items-center justify-around md:justify-center">
-        <h1 className="text-[3.5em] md:text-[5em] font-[600] font-crimson text-brand_yellow">
+      <section className="relative music w-full h-max md:h-screen px-[30px] pb-[20px] bg-white flex flex-col items-center justify-around md:justify-center">
+        <h1 className="text-[3.5em] md:text-[5em] font-[600] font-crimson text-brand_yellow my-8 md:my-0">
           Music
         </h1>
         <Swiper
-          className="w-full h-[65dvh]"
+          className="w-full h-max md:h-[65dvh] "
           modules={[Navigation, Pagination, Scrollbar, A11y]}
           spaceBetween={50}
           slidesPerView={1}
@@ -209,7 +206,18 @@ const Landing = () => {
           })}
 
           {/* navigation navigation navigation navigation navigation navigation */}
-          <div className="h-max absolute z-20 bottom-0 left-[50%] translate-x-[-50%] md:translate-x-[0%] flex flex-row items-center md:flex-col gap-3  md:gap-[2px]">
+          {/* <div className="h-max absolute z-20 bottom-0 left-[50%] translate-x-[-50%] md:translate-x-[0%] flex flex-row items-center md:flex-col gap-3  md:gap-[2px]">
+            <div className="prev eswiper-button-prev h-8 md:h-10 aspect-square bg-black flex items-center justify-center">
+              <BsChevronLeft size={25} color="white" />
+            </div>
+
+            <div className="next eswiper-button-next h-8 md:h-10 aspect-square bg-black flex items-center justify-center">
+              <BsChevronRight size={25} color="white" />
+            </div>
+          </div> */}
+        </Swiper>
+
+          <div className="h-max  z-20 bottom-0 left-[50%] translate-x-[0%] md:translate-y-[-100%] md:translate-x-[50%] flex flex-row items-center md:flex-col gap-3  md:gap-[2px]">
             <div className="prev eswiper-button-prev h-8 md:h-10 aspect-square bg-black flex items-center justify-center">
               <BsChevronLeft size={25} color="white" />
             </div>
@@ -218,9 +226,8 @@ const Landing = () => {
               <BsChevronRight size={25} color="white" />
             </div>
           </div>
-        </Swiper>
 
-        <div className="flex flex-row items-center justify-center gap-2 -translate-y-[40px] md:translate-y-0 md:mt-4">
+        <div className="flex flex-row items-center justify-center gap-2 mt-4 md:-mt-10 pb-4">
           {slides.map((slide, i) => {
             return (
               <span

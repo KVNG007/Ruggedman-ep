@@ -261,7 +261,7 @@ const TMSE = () => {
 
         <section className="relative ep-info h-max md:h-[120dvh] w-[100dvw] flex flex-col">
             <div className="flex flex-col w-full h-full bg-black/90 pt-8">
-                <h1 className="text-[3em] h-max md:text-[2em] font-bold font-nunito  text-brand_yellow text-right leading-[1em] px-[50px]  mt-8 drop-shadow-xl">
+                <h1 className="text-[1em] h-max md:text-[2em] font-bold font-nunito  text-brand_yellow text-right leading-[1em] px-[50px]  mt-8 drop-shadow-xl">
                 EP PRESS RELEASE FOLLOW-UP
                 </h1>
                 <div className="w-full h-full flex flex-col-reverse md:flex-row  text-white">

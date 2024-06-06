@@ -47,8 +47,9 @@ const SlideComp = ({currentSlide, slide, index, identifier}) => {
 
 
     return (
-        <div key={index} className="image-holder h-full w-full  flex flex-col md:flex-row items-center justify-center">
-            <div className="relative h-full aspect-square flex items-center justify-center">
+        <div key={index} className="image-holder h-max md:h-full w-full  flex flex-col md:flex-row items-center justify-center">
+
+            <div className="relative h-[275px]  md:h-full aspect-square flex items-center justify-center">
                 <span className={`${slide?.key}`} ></span>
 
                 <p className={`${identifier} h-full w-full `} style={{backgroundImage: `url(${slide?.link})`}}>
@@ -58,7 +59,7 @@ const SlideComp = ({currentSlide, slide, index, identifier}) => {
             </div>
 
 
-            <div className="bg-white h-full aspect-square flex flex-col items-start justify-center text-center pl-0 md:pl-[80px] text-black">
+            <div className="bg-white h-[275px] md:h-full aspect-square flex flex-col items-start justify-center text-center pl-0 md:pl-[80px] text-black">
                 <div className="w-full flex flex-col items-center md:items-start ">
                     <p className='font-nunito text-xs'>Released {slide?.content?.release_date}</p>
 

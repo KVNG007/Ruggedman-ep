@@ -38,7 +38,8 @@ const About = () => {
             <img
               src="/assets/rugged-shoulder.png"
               alt=""
-              className="w-[82%] "
+              // className="w-[82%] "
+              className="w-full md:w-[80%] "
             />
           </aside>
 
@@ -82,13 +83,13 @@ const About = () => {
 
 
 
-      <section className="shticky about-more w-full h-[400px] font-nunito">
+      <section className="shticky z-10 about-more w-full h-[400px] font-nunito">
         <div className="h-full w-full px-3 bg-black/80 flex items-end md:items-center justify-center">
-          <img src="/assets/about-shtick.png" alt="" className="w-full md:w-[unset] h-max md:h-full" />
+          <img src="/assets/about-shtick.png" alt="" className="w-full h-auto md:w-[unset] md:h-max md:h-fulll" />
         </div>
       </section>
 
-      <section className="relative h-max md:h-[120dvh] w-[100dvw] flex flex-col pt-8  bg-white">
+      <section className="relative z-30 h-max md:h-[120dvh] w-[100dvw] flex flex-col pt-8  bg-white">
         <div className="w-full h-full flex flex-col-reverse md:flex-row bg-white text-black">
           <aside className="w-full md:w-[60%] pl-[30px] pr-[30px] md:pl-[60px] md:pr-0 py-4 md:py-0 h-full flex items-center justify-start font-nunito">
             <article className="flex flex-col gap-8 max-w-[5ssd00px] ">
