@@ -91,10 +91,10 @@ const Landing = () => {
 
   }, [])
 
-  useEffect(() => {
-    currentSlide == 2 ? tl2.current.play() : tl2.current.reverse();
+  // useEffect(() => {
+  //   currentSlide == 2 ? tl2.current.play() : tl2.current.reverse();
 
-  }, [currentSlide]);
+  // }, [currentSlide]);
 
   return (
     <motion.div
@@ -120,21 +120,21 @@ const Landing = () => {
         <div className="relative w-full h-full flex items-center justify-center ">
           <Popup
             title="Nigerian rapper"
-            className={`top-[30dvh] left-[15.5dvw]`}
+            className={`top-[30dvh] left-[15.5dvw] floating`}
           />
-          <Popup title="ACTOR" className={`top-[39dvh] left-[30dvw]`} />
+          <Popup title="ACTOR" className={`top-[39dvh] left-[30dvw] floating-2`} />
           <Popup
             title="un peace ambassador"
-            className={`top-[75dvh] left-[79dvw]`}
+            className={`top-[75dvh] left-[79dvw] floating-3`}
           />
-          <Popup title="humanitarian" className={`top-[31dvh] left-[79dvw]`} />
+          <Popup title="humanitarian" className={`top-[31dvh] left-[79dvw] floating-3`} />
           <Popup
             title="un peace ambassador"
-            className={`top-[39dvh] left-[65dvw]`}
+            className={`top-[39dvh] left-[65dvw] floating-2`}
           />
           <Popup
             title="Radio show host"
-            className={`top-[75dvh] left-[15.5dvw]`}
+            className={`top-[75dvh] left-[15.5dvw] floating-1`}
           />
 
           <img

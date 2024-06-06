@@ -62,6 +62,8 @@ html {
     box-sizing: border-box;
 }
 
+
+
 .ookan-overlay, .ookan-overlay, .eeji-overlay, .eeta-overlay, .eerin-overlay, .aarun-overlay, .eefa-overlay, .eeje-overlay, .eejo-overlay {
   position: absolute;
   content: " ";
@@ -76,12 +78,65 @@ html {
   // transition: all 1s;
 }
 
-
-
 .cover, .ookan, .eeji, .eeta, .eerin, .aarun, .eefa, .eeje, .eejo{
-    opacity: 0;
-    background-size: cover;
-    background-position: 50% 50%;
+  opacity: 0;
+  background-size: cover;
+  background-position: 50% 50%;
+}
+
+.floating {  
+  animation-name: floating;
+  animation-duration: 3s;
+  animation-iteration-count: infinite;
+  animation-timing-function: ease-in-out;
+}
+.floating-3 {  
+  animation-name: floating;
+  animation-duration: 3s;
+  animation-delay: 0.9s;
+  animation-iteration-count: infinite;
+  animation-timing-function: ease-in-out;
+}
+.floating-2 {  
+  animation-name: floating;
+  animation-duration: 3s;
+  animation-delay: 0.6s;
+  animation-iteration-count: infinite;
+  animation-timing-function: ease-in-out;
+}
+.floating-1 {  
+  animation-name: floating;
+  animation-duration: 3s;
+  animation-delay: 0.3s;
+  animation-iteration-count: infinite;
+  animation-timing-function: ease-in-out;
+}
+
+.tmse {
+  background-image: url("/assets/tmse-cover.jpg");
+  background-size: cover;
+  background-position: 50%< 50%;
+}
+  
+.xkx {  
+  animation-name: fonting;
+  animation-duration: 3s;
+  animation-delay: 0.3s;
+  animation-iteration-count: infinite;
+  animation-timing-function: ease-in-out;
+}
+  
+@keyframes floating {
+  0% { transform: translate(0,  0px); }
+  50%  { transform: translate(0, 15px); }
+  100%   { transform: translate(0, -0px); }    
+}
+
+
+@keyframes fonting {
+  0% { font-family: "Crimson Text"; }
+  50%  { font-family: "Nunito Sans"; }
+  100%   { font-family: "Roboto"; }    
 }
 
 .music-more {
@@ -91,6 +146,16 @@ html {
 }
 .about-more {
   background-image: url('/assets/shoulder-bg.png');
+  background-size: cover;
+  background-position: 10% 30%;
+}
+.night-out {
+  background-image: url('/assets/night-out.jpg');
+  background-size: cover;
+  background-position: 10% 30%;
+}
+.ep-info {
+  background-image: url('/assets/tmse-cover.jpg');
   background-size: cover;
   background-position: 10% 30%;
 }

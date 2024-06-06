@@ -27,6 +27,21 @@ a, ul, ol, li {
   mix-blend-mode:difference !important;
 }
 
+cite {
+  position: relative;
+
+  &::before {
+    position: absolute;
+    content: '';
+    top: 50%;
+    right: 180px;
+    width: 80px;
+    height: 1px;
+    background-color: #ffffff;
+    transform: translate(50%, -50%);
+}
+}
+
 
 @tailwind base;
 @tailwind components;
