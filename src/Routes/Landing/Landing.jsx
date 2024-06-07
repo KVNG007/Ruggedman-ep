@@ -121,21 +121,21 @@ const Landing = () => {
         <div className="relative w-full h-full flex items-center justify-center ">
           <Popup
             title="Nigerian rapper"
-            className={`top-[30dvh] left-[15.5dvw] floating`}
+            className={`top-[30dvh] left-[13.5dvw] floating`}
           />
-          <Popup title="ACTOR" className={`top-[39dvh] left-[30dvw] floating-2`} />
+          <Popup title="ACTOR" className={`top-[39dvh] left-[28dvw] floating-2`} />
           <Popup
             title="un peace ambassador"
-            className={`top-[75dvh] left-[79dvw] floating-3`}
+            className={`top-[75dvh] left-[77dvw] floating-3`}
           />
-          <Popup title="humanitarian" className={`top-[31dvh] left-[79dvw] floating-3`} />
+          <Popup title="humanitarian" className={`top-[31dvh] left-[77dvw] floating-3`} />
           <Popup
             title="un peace ambassador"
-            className={`top-[39dvh] left-[65dvw] floating-2`}
+            className={`top-[39dvh] left-[63dvw] floating-2`}
           />
           <Popup
             title="Radio show host"
-            className={`top-[75dvh] left-[15.5dvw] floating-1`}
+            className={`top-[75dvh] left-[13.5dvw] floating-1`}
           />
 
           <img
