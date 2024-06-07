@@ -6,6 +6,7 @@ import { ImFacebook2 } from 'react-icons/im';
 import { FaInstagram, FaSpotify, FaTwitter, FaYoutube } from 'react-icons/fa';
 import { SiGmail } from 'react-icons/si';
 import { IoIosArrowRoundForward } from 'react-icons/io';
+import { LuCrown } from 'react-icons/lu';
 
 const Nav = () => {
   const location = useLocation().pathname;
@@ -27,6 +28,10 @@ const Nav = () => {
           <nav className="h-full flex flex-col items-center justify-around font-ninito pt-8">
             {/* <Link to={`/music`}>MUSIC</Link> */}
             <Link to={`/music`}>MUSIC</Link>
+            <Link to={`/music/tmse`} className='flex items-center justify-center gap-2'>
+              <span>T.M.S.E EP</span>
+              <LuCrown size={15} color='#F8B343' />
+            </Link>
             <Link to={`/videos`}>VIDEOS</Link>
             <Link to={`/about`}>ABOUT</Link>
             <Link to={`/tour`}>TOUR</Link>

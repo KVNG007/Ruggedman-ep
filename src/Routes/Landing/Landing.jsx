@@ -32,11 +32,15 @@ const Landing = () => {
   // const slides = ["ookan", "eeji", 'eeta', 'eerin', 'aarun', 'eefa', 'eeje' , 'eejo'];
 
   const slides = [
-    { key: 'ookan-overlay', id : 'ookan', link: '/assets/albums/Album-1.png', content: {release_date: '2005', album_name: 'Thy Album Come', link: '' } },
-    { key: 'eeji-overlay', id : 'eeji', link: '/assets/albums/Album-2.png', content: {release_date: '2017', album_name: 'Rugeddy Baba', link: '' } },
-    { key: 'eeta-overlay', id : 'eeta', link: '/assets/albums/Album-3.jpg', content: {release_date: '2009', album_name: 'Untouchable', link: '' } },
-    { key: 'eerin-overlay', id : 'eerin', link: '/assets/albums/Album-1.png', content: {release_date: '2016', album_name: 'Money Making Music', link: '' } },
-    { key: 'aarun-overlay', id : 'aarun', link: '/assets/albums/Album-5.jpg', content: {release_date: '2024', album_name: 'Situation EP', link: '' } }
+    { key: 'ookan-overlay', id : 'ookan', link: '/assets/albums/Album-1.png', content: {release_date: 'Released 2005', album_name: 'Thy Album Come', link: '' } },
+    
+    { key: 'eeji-overlay', id : 'eeji', link: '/assets/albums/Album-2.png', content: {release_date: 'Released 2017', album_name: 'Rugeddy Baba', link: '' } },
+    
+    { key: 'eeta-overlay', id : 'eeta', link: '/assets/albums/Album-3.jpg', content: {release_date: 'Released 2009', album_name: 'Untouchable', link: '' } },
+    
+    { key: 'eerin-overlay', id : 'eerin', link: '/assets/albums/Album-1.png', content: {release_date: 'Released 2016', album_name: 'Money Making Music', link: '' } },
+    
+    { key: 'aarun-overlay', id : 'aarun', link: '/assets/albums/Album-5.jpg', content: {release_date: 'Released 2024', album_name: 'Situation EP', link: '' } }
   ];
 
   const Popup = (props) => {
@@ -306,6 +310,12 @@ const Landing = () => {
         </div>
       </section>
 
+      <section className="bg-brand_yel1ow">
+        <img src="/assets/QR.jpg" alt="" className="w-full" />
+      </section>
+
+      <Footer />
+
       <CentralModal isOpen={showModal} closeModal={()=> setShowModal(false)} >
         <div className='relative z-20  mt-[7.5%] p-8 py-[40px] w-full max-w-[480px]  bg-[#0F0F11] flex flex-col justify-between'>
 
@@ -336,8 +346,6 @@ const Landing = () => {
           </div>
         </div>
       </CentralModal>
-
-      <Footer />
     </motion.div>
   );
 }

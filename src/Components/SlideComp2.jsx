@@ -2,7 +2,7 @@ import gsap from 'gsap';
 import React, { useEffect, useRef } from 'react'
 import { Link } from 'react-router-dom';
 
-const SlideComp = ({currentSlide, slide, index, identifier}) => {
+const SlideComp2 = ({currentSlide, slide, index, identifier}) => {
 
     const tl2 = useRef();
     const overlayRef = useRef();
@@ -59,7 +59,7 @@ const SlideComp = ({currentSlide, slide, index, identifier}) => {
             </div>
 
 
-            <div className="bg-white h-[275px] md:h-full aspect-square flex flex-col items-start justify-center text-center pl-0 md:pl-[80px] text-black">
+            <div className="bg-white h-[275px] md:h-full aspect-square flex flex-col items-start justify-center text-center md:text-left  pl-0 md:pl-[80px] text-black">
                 <div className="w-full flex flex-col items-center md:items-start ">
                     <p className='font-nunito text-xs'>{slide?.content?.release_date}</p>
 
@@ -70,18 +70,18 @@ const SlideComp = ({currentSlide, slide, index, identifier}) => {
                         {slide?.content?.album_name}
                     </h2>
 
-                    <div className="w-full flex items-center justify-center md:justify-start">
-                    <Link className={`w-max font-nunito text-sm font-semibold border-b border-black  transition-all ease-in-out duration-300 delay-500
-                        
+                        <p className={`w-[320px] md:w-full max-w-[600px] h-max font-nunito text-xs text-center md:text-left font-semibold transition-all ease-in-out duration-300 delay-500 whitespace-normal 
+                            ${currentSlide -1 == index ? 'opacity-100' : 'opacity-0'}
                         `}
                         > 
-                            STREAM / DOWNLOAD
-                        </Link>
-                    </div>
+                            {slide?.content?.description}
+                        </p>
+                    {/* <div className="w-full flex items-center justify-center md:justify-start mt-5 max-w-300px">
+                    </div> */}
                 </div>
             </div>
         </div>
     )
 }
 
-export default SlideComp
+export default SlideComp2

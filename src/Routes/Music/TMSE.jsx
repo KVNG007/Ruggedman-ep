@@ -12,7 +12,7 @@ import 'swiper/css/pagination';
 import 'swiper/css/scrollbar';
 import { BsChevronLeft, BsChevronRight } from 'react-icons/bs';
 import gsap from 'gsap';
-import SlideComp from '../../Components/SlideComp';
+import SlideComp2 from '../../Components/SlideComp2';
 import Footer from '../../Components/Footer';
 import { CentralModal } from '../../Components/Modal';
 import { GrApple } from 'react-icons/gr';
@@ -33,10 +33,13 @@ const TMSE = () => {
     const [showModal, setShowModal] = useState(false);
     
     const slides = [
-        { key: 'ookan-overlay', id : 'ookan', link: '/assets/tmse-cover.jpg', content: {release_date: '2005', album_name: 'Thy Album Come', link: '' } },
-        { key: 'eeji-overlay', id : 'eeji', link: '/assets/tmse-cover.jpg', content: {release_date: '2017', album_name: 'Rugeddy Baba', link: '' } },
-        { key: 'eerin-overlay', id : 'eerin', link: '/assets/tmse-cover.jpg', content: {release_date: '2016', album_name: 'Money Making Music', link: '' } },
-        { key: 'aarun-overlay', id : 'aarun', link: '/assets/tmse-cover.jpg', content: {release_date: '2024', album_name: 'Situation EP', link: '' } }
+        { key: 'ookan-overlay', id : 'ookan', link: '/assets/tmse-cover.jpg', content: {release_date: ' Produced by Blvack Sauce.', album_name: 'O.G', description: 'OG is a track aptly named because Ruggedman features some Ogs of rap music on this. Such as Mista Styles (formerly known as Freestyle from the rap group Trybesmen. King Uzi aka the fire spitter, brother to rapper Ikechukwu. Female rapper Eva Alordiah and Jesse Jagz. Produced by Blvack Sauce.', link: '' } },
+
+        { key: 'eeji-overlay', id : 'eeji', link: '/assets/tmse-cover.jpg', content: {release_date: 'Produced by Sudden Smoke.', album_name: 'One Man', description: 'One Man is an afrobeats track in which Ruggedman shows his level of adaptability to the change that has taken place in the Nigerian music industry. Produced by Sudden Smoke.', link: '' } },
+
+        { key: 'eerin-overlay', id : 'eerin', link: '/assets/tmse-cover.jpg', content: {release_date: 'Produced by Sudden Smoke.', album_name: 'Found Love', description: 'Found Love is perhaps the biggest surprise on the Ep. This is so because it is a 100% r n b love song from an artist the world knows as a rapper. Produced by Sudden Smoke.', link: '' } },
+
+        { key: 'aarun-overlay', id : 'aarun', link: '/assets/tmse-cover.jpg', content: {release_date: 'Produced by Pimp.', album_name: 'Gara', description: ' Gara is another afrobeats track Wizkid and Kizz Daniel would be proud to be on. Produced by Pimp.', link: '' } }
     ];
 
 
@@ -90,16 +93,11 @@ const TMSE = () => {
 
         </section>        
 
-        <section className="  h-[100dvh] md:h-[150dvh] w-[100dvw] flex flex-col bg-white  ">
+        <section className="  h-[50dvh] md:h-[150dvh] w-[100dvw] flex flex-col bg-white  ">
 
             <div className="relative tmse w-full h-full flex items-center justify-center bg-light_green text-black">
-            {/* <img
-                src="/assets/tmse-cover.jpg"
-                alt=""
-                className="h-[90%] absolute bottom-0 left-[50%] translate-x-[-50%] "
-            /> */}
 
-            <RuggedIcon className={`w-full max-w-[85dvw] relative z-[55] `} />
+             <RuggedIcon className={`w-full max-w-[85dvw] relative z-[25] `} />
             </div>
         </section>
 
@@ -171,18 +169,18 @@ const TMSE = () => {
         </section>
 
         <section className="audit w-full flex flex-col items-center px-[2.5%] py-[70px] bg-accent text-white">
-            <h2 className="flex flex-row items-start justify-center gap-4 font-Noto text-lg md:text-[1.5em] max-kw-[600px] leading-[1.2em] h-max overflow-hidden">
+            <h2 className="flex flex-row items-start justify-center gap-4 font-Noto text-sm md:text-[1.5em] max-kw-[600px] leading-[1.2em] h-max overflow-hidden">
             <img
                 src="/assets/quotes.png"
                 alt=""
-                className="mb-8 w-14 rotate-180"
+                className="mb-8 w-7 md:w-14  rotate-180"
             />{" "}
-                <span className='mt-2 leading-8'>The EP is aptly titled because it is a body of work where I decided to experiment with different
+                <span className='mt-2 leading-8 text-justify'>The EP is aptly titled because it is a body of work where I decided to experiment with different
                 genres of music. It is not the usual rap I am known for, rather it is a way to show the side of
                 Ruggedman people aren’t familiar with, I achieved this with the support of amazing song
                 writers like Specikinging and Mbryo. This will be understood in the track “Found Love” where
                 Fiokee displayed his guitarist art.</span>
-            <img src="/assets/quotes.png" alt="" className="mb-8 w-14" />
+            <img src="/assets/quotes.png" alt="" className="mb-8 w-7 md:w-14 " />
             </h2>
 
             <cite className="w-full text-right">RuggedMan</cite>
@@ -198,7 +196,7 @@ const TMSE = () => {
             </button>
         </section>
 
-        <section className="relative music w-full h-screen px-[30px] bg-white flex flex-col items-center justify-around md:justify-center">
+        {/* <section className="relative music w-full h-screen px-[30px] bg-white flex flex-col items-center justify-around md:justify-center">
             <h1 className="text-[3em] md:text-[4em] font-[600] font-crimson text-brand_yellow mb-4">
                 Tracks
             </h1>
@@ -230,7 +228,6 @@ const TMSE = () => {
                 );
             })}
 
-            {/* navigation navigation navigation navigation navigation navigation */}
             <div className="h-max absolute z-20 bottom-0 left-[50%] translate-x-[-50%] md:translate-x-[0%] flex flex-row items-center md:flex-col gap-3  md:gap-[2px]">
                 <div className="prev eswiper-button-prev h-8 md:h-10 aspect-square bg-black flex items-center justify-center">
                 <BsChevronLeft size={25} color="white" />
@@ -257,7 +254,67 @@ const TMSE = () => {
                 );
             })}
             </div>
-        </section>
+        </section> */}
+
+        <section className="relative music w-full h-max md:h-screen px-[30px] pb-[20px] bg-white flex flex-col items-center justify-around md:justify-center">
+            <h1 className="text-[3.5em] md:text-[5em] font-[600] font-crimson text-brand_yellow my-8 md:my-0">
+            Music
+            </h1>
+            <Swiper
+            className="w-full h-max md:h-[65dvh] "
+            modules={[Navigation, Pagination, Scrollbar, A11y]}
+            spaceBetween={50}
+            slidesPerView={1}
+            navigation={{
+                prevEl: ".prev",
+                nextEl: ".next",
+            }}
+            loop={true}
+            onSlideChange={(swipe) => setCurrentSlide(swipe.realIndex + 1)}
+            onSwiper={(swiper) => console.log(swiper)}
+            >
+            {slides.map((slide, i) => {
+                return (
+                <SwiperSlide key={i}>
+                    <SlideComp2
+                    slide={slide}
+                    key={slide?.id}
+                    currentSlide={currentSlide}
+                    index={i}
+                    identifier={slide.id}
+                    />
+                </SwiperSlide>
+                );
+            })}
+
+            </Swiper>
+
+            <div className="h-max  z-20 bottom-0 left-[50%] translate-x-[0%] md:translate-y-[-100%] md:translate-x-[50%] flex flex-row items-center md:flex-col gap-3  md:gap-[2px]">
+                <div className="prev eswiper-button-prev h-8 md:h-10 aspect-square bg-black flex items-center justify-center">
+                <BsChevronLeft size={25} color="white" />
+                </div>
+
+                <div className="next eswiper-button-next h-8 md:h-10 aspect-square bg-black flex items-center justify-center">
+                <BsChevronRight size={25} color="white" />
+                </div>
+            </div>
+
+            <div className="flex flex-row items-center justify-center gap-2 mt-4 md:-mt-10 pb-4">
+            {slides.map((slide, i) => {
+                return (
+                <span
+                    key={i}
+                    className={`w-2 h-2 border border-black rounded-full transition-all ease-in-out duration-300 animate__animated animate_a_slow
+                    ${
+                    i == currentSlide - 1
+                        ? "bg-company_red  animate__headShake "
+                        : ""
+                    } `}
+                ></span>
+                );
+            })}
+            </div>
+        </section>        
 
         <section className="relative ep-info h-max md:h-[120dvh] w-[100dvw] flex flex-col">
             <div className="flex flex-col w-full h-full bg-black/90 pt-8">
@@ -347,6 +404,10 @@ const TMSE = () => {
                 CONTACT US
                 <SiGmail color='white' size={17.5} />
             </button>
+        </section>
+
+        <section className="bg-brand_yel1ow">
+            <img src="/assets/QR.jpg" alt="" className="w-full" />
         </section>
         
 
