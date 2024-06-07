@@ -19,7 +19,7 @@ const Nav = () => {
        ${location == '/' ? 'text-white bg-blacks' : 'text-black bg-whites'}
     `}
     >
-      <div className={`absolute contents md:hidden top-0 left-0 w-screen h-screen ${showNav ? 'backdrop-blur-sm pointer-events-auto' : 'pointer-events-none'} `} onClick={()=> setShowNav(prev => !prev)}>
+      <div className={`absolute z-[70]  contents md:hidden top-0 left-0 w-[100dvw] h-[100dvh] ${showNav ? 'backdrop-blur-sm pointer-events-auto' : 'pointer-events-none'} `} onClick={()=> setShowNav(prev => !prev)}>
         
         <div className={`flex flex-col items-center justify-between gap-[20dvh] w-[80dvw] h-screen absolute top-0 right-[100%] bg-black text-white transition-all ease-in-out duration-300
           ${showNav ? 'translate-x-[100%]' : 'translate-x-[0%]'} py-[10dvh] px-[30px]
@@ -65,7 +65,7 @@ const Nav = () => {
             <a href={`#`} targest='_blank' >
               <SiGmail color='white' />
             </a>
-        </div>
+          </div>
         </div>
         
       </div>

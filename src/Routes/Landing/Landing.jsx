@@ -1,4 +1,5 @@
 import React, { useEffect, useRef, useState } from 'react'
+import emailjs from '@emailjs/browser';
 import 'animate.css'
 import { motion } from 'framer-motion'
 import { Link, useLocation } from 'react-router-dom';
@@ -19,17 +20,13 @@ import { GrApple } from 'react-icons/gr';
 import { ImFacebook2 } from 'react-icons/im';
 import { FaInstagram, FaSpotify, FaTwitter, FaYoutube } from 'react-icons/fa';
 import { SiGmail } from 'react-icons/si';
+import { toast } from 'sonner';
 
 
-const Landing = () => {
-
-  const tl2 = useRef();
-
+const Landing = () => { 
 
   const [currentSlide, setCurrentSlide] = useState(0);
-  const [showModal, setShowModal] = useState(false);
-
-  // const slides = ["ookan", "eeji", 'eeta', 'eerin', 'aarun', 'eefa', 'eeje' , 'eejo'];
+  const [showModal, setShowModal] = useState(false);  
 
   const slides = [
     { key: 'ookan-overlay', id : 'ookan', link: '/assets/albums/Album-1.png', content: {release_date: 'Released 2005', album_name: 'Thy Album Come', link: '' } },
@@ -54,48 +51,66 @@ const Landing = () => {
   }
 
 
+  const formRef3 = useRef();
+
+  const [messageDetails, setMessageDetails] = useState({
+    name: '',
+    email: '',
+    country: ''
+  })
+
+  const sendEmail = (e) => {
+      e.preventDefault();
+
+      toast.success('Sending response...', {position: 'bottom-center', duration: 2000});
+
+      emailjs
+      .sendForm('service_ndejjoo', 'template_qlqd5j9', formRef3.current, {
+          publicKey: 'W0g6-fmIquGkzcrwz',
+      })
+      .then(
+          () => {
+              console.log('SUCCESS!');
+              setShowModal(false);
+              setMessageDetails({
+                name: '',
+                email: '',
+                country: '',
+              });
+              toast.success('Subscription successful.', {duration: 2000, position: 'bottom-center'})
+          },
+      (error) => {
+          console.log('FAILED...', error.text);
+          toast.error('OOps something went wrong, please try again.', {duration: 2000, position: 'bottom-center'})
+          },
+      );
+  };
+                
+  const handleSendEmail = (e) => {
+      e.preventDefault();
+      if(!messageDetails.name || !messageDetails.email || !messageDetails.country ){
+          console.log(messageDetails);
+          return toast.warning('Please complete the form to continue', {position: 'bottom-center', duration: 2000})
+      }
+      else if(!messageDetails.email.includes('@')  || !messageDetails.email.includes('.') || messageDetails.email.length <= 5  ){
+          return toast.warning('Please enter a valid email address', {position: 'bottom-center', duration: 2000})
+      }
+      else {
+          // console.log(messageDetails);
+          sendEmail(e);
+      }
+  }
+
+
+
+
+
   useEffect(() => {
-
-
-    tl2.current = gsap.timeline({
-      paused:true
-    })
-
-
-
-    //2nd TL
-    tl2.current.to(".overlay", {
-      width:"0%",
-      duration:0.25,
-      ease:'expo.inOut'
-    }).to(".overlay",{
-      width:"100%",
-      right:0,
-      left: 'unset',
-      ease:'expo.inOut'
-    }).to(".cover",{
-      color: "black",
-      opacity: 1,
-      duration:0,
-    })
-    .to(".overlay",{
-      width:"0%",
-      ease:'expo.inOut',
-      // duration: 0.25
-    })
-
-
     setTimeout(() => {
       setShowModal(true)
     }, 2500);
-
-
   }, [])
 
-  // useEffect(() => {
-  //   currentSlide == 2 ? tl2.current.play() : tl2.current.reverse();
-
-  // }, [currentSlide]);
 
   return (
     <motion.div
@@ -106,17 +121,17 @@ const Landing = () => {
     >
       {/* <Nav /> */}
       
-      <header className="landing relative w-full h-[75dvh] pt-10 md:pt-0 md:h-screen bg-black px-[4%] ">
+      <header className="landing relative w-full h-[70dvh] pt-10 md:pt-0 md:h-screen bg-black px-[4%] ">
         <img
-          src="/assets/ruggedman-copy-1.png"
+          src="/assets/AK7A8310-no-bg.png"
           alt=""
-          className="hidden md:block absolute md:h-full md:w-auto bottom-0 left-[50%] translate-x-[-50%]"
+          className="hidsden md:block absolute md:h-full md:w-auto bottom-0 left-[50%] translate-x-[-50%]"
         />
-        <img
+        {/* <img
           src="/assets/ruggedman-1-mobile.png"
           alt=""
           className="block md:hidden absolute  md:h-full md:w-auto bottom-0 left-[50%] translate-x-[-50%]"
-        />
+        /> */}
 
         <div className="relative w-full h-full flex items-center justify-center ">
           <Popup
@@ -141,7 +156,7 @@ const Landing = () => {
           <img
             src="/assets/ruggedman-header.png"
             alt=""
-            className="relative z-40 w-full mt-[70%] md:w-[62.5dvw] md:mt-16"
+            className="relative z-40 w-full mt-[60%] md:w-[62.5dvw] md:mt-16"
           />
         </div>
         
@@ -324,25 +339,33 @@ const Landing = () => {
                 Newsletter
               </h1>
 
-              <section className="w-full flex flex-col gap-3 text-white font-roboto">
+              <form onSubmit={handleSendEmail} className="w-full flex flex-col gap-3 text-white font-roboto" ref={formRef3}>
                   <aside className='flex flex-col gap-1'>
                     <label htmlFor="name" className='text-[10px] font-bold font-nunito'><span className='text-xs'>*</span> NAME</label>
-                    <input type="text" name="name" id=""  className='h-7 bg-transparent border-b border-white w-full px-4 outline-none '/>
+                    <input type="text" name="from_name" id=""  
+                      className='h-7 bg-transparent border-b border-white w-full px-4 outline-none '
+                      value={messageDetails.name} onChange={({target}) => setMessageDetails(prev => ({...prev, name: target.value }))}
+                    />
                   </aside>
                   <aside className='flex flex-col gap-1'>
                     <label htmlFor="name" className='text-[10px] font-bold font-nunito'><span className='text-xs'>*</span> EMAIL</label>
-                    <input type="text" name="name" id=""  className='h-7 bg-transparent border-b border-white w-full px-4 outline-none '/>
+                    <input type="text" name="from_email" id=""  
+                      className='h-7 bg-transparent border-b border-white w-full px-4 outline-none '
+                      value={messageDetails.email} onChange={({target}) => setMessageDetails(prev => ({...prev, email: target.value }))}
+                    />
                   </aside>
                   <aside className='flex flex-col gap-1'>
                     <label htmlFor="name" className='text-[10px] font-bold font-nunito'><span className='text-xs'>*</span> CHOOSE COUNTRY</label>
-                    <input type="text" name="name" id=""  className='h-7 bg-transparent border-b border-white w-full px-4 outline-none '/>
-                  </aside>
-                  
-                  <span className='text-brand_yellow font-nunito text-[9px] uppercase text-center py-2'>ruggedy01@gmail.com, smileglobal@gmail.com or +234703131979</span>
-                  <button className='self-start text-brand_yellow font-nunito border-b border-brand_yellow mt-1 '>
+                    <input type="text" name="from_country" id=""  
+                      className='h-7 bg-transparent border-b border-white w-full px-4 outline-none '
+                      value={messageDetails.country} onChange={({target}) => setMessageDetails(prev => ({...prev, country: target.value }))}
+                    />
+                  </aside>                  
+                  <a  href="mailto:ruggedy01@gmail.com" className='text-brand_yellow font-nunito text-[9px] uppercase text-center py-2'>ruggedy01@gmail.com or +234703131979</a>
+                  <button type='submit' className='self-start text-brand_yellow font-nunito border-b border-brand_yellow mt-1 ' onClick={handleSendEmail}>
                       SUBMIT
                   </button>
-              </section>
+              </form>
           </div>
         </div>
       </CentralModal>
