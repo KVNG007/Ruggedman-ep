@@ -31,9 +31,9 @@ const Music = () => {
               <h2 className="font-nunito text-[18px] text-black font-bold">
                 SITUATION EP
               </h2>
-              <Link className="w-max text-light_green text-[12px] bg-transparent border border-light_green font-montserrat font-medium px-8 h-9 mt-2 flex items-center justify-center rounded-md">
+              <a href='https://empire.ffm.to/themichaelstephensexperiment' className="w-max text-light_green text-[12px] bg-transparent border border-light_green font-montserrat font-medium px-8 h-9 mt-2 flex items-center justify-center rounded-md">
                 LISTEN NOW
-              </Link>
+              </a>
               <div className="flex flex-col md:flex-row items-center gap-3 mt-2">
                 <span className='text-xs pr-3'>SHARE</span>
 

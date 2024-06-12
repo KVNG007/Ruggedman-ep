@@ -21,6 +21,7 @@ import { ImFacebook2 } from 'react-icons/im';
 import { FaInstagram, FaSpotify, FaTwitter, FaYoutube } from 'react-icons/fa';
 import { SiGmail } from 'react-icons/si';
 import { toast } from 'sonner';
+import { IoCloseOutline } from 'react-icons/io5';
 
 
 const Landing = () => { 
@@ -29,15 +30,15 @@ const Landing = () => {
   const [showModal, setShowModal] = useState(false);  
 
   const slides = [
-    { key: 'ookan-overlay', id : 'ookan', link: '/assets/albums/Album-1.png', content: {release_date: 'Released 2005', album_name: 'Thy Album Come', link: '' } },
+    { key: 'ookan-overlay', id : 'ookan', link: '/assets/albums/Album-1.png', content: {release_date: 'Released 2005', album_name: 'Thy Album Come', link: 'https://empire.ffm.to/themichaelstephensexperiment' } },
     
-    { key: 'eeji-overlay', id : 'eeji', link: '/assets/albums/Album-2.png', content: {release_date: 'Released 2017', album_name: 'Rugeddy Baba', link: '' } },
+    { key: 'eeji-overlay', id : 'eeji', link: '/assets/albums/Album-2.png', content: {release_date: 'Released 2017', album_name: 'Rugeddy Baba', link: 'https://empire.ffm.to/themichaelstephensexperiment' } },
     
-    { key: 'eeta-overlay', id : 'eeta', link: '/assets/albums/Album-3.jpg', content: {release_date: 'Released 2009', album_name: 'Untouchable', link: '' } },
+    { key: 'eeta-overlay', id : 'eeta', link: '/assets/albums/Album-3.jpg', content: {release_date: 'Released 2009', album_name: 'Untouchable', link: 'https://empire.ffm.to/themichaelstephensexperiment' } },
     
-    { key: 'eerin-overlay', id : 'eerin', link: '/assets/albums/Album-1.png', content: {release_date: 'Released 2016', album_name: 'Money Making Music', link: '' } },
+    { key: 'eerin-overlay', id : 'eerin', link: '/assets/albums/Album-1.png', content: {release_date: 'Released 2016', album_name: 'Money Making Music', link: 'https://empire.ffm.to/themichaelstephensexperiment' } },
     
-    { key: 'aarun-overlay', id : 'aarun', link: '/assets/albums/Album-5.jpg', content: {release_date: 'Released 2024', album_name: 'Situation EP', link: '' } }
+    { key: 'aarun-overlay', id : 'aarun', link: '/assets/albums/Album-5.jpg', content: {release_date: 'Released 2024', album_name: 'Situation EP', link: 'https://empire.ffm.to/themichaelstephensexperiment' } }
   ];
 
   const Popup = (props) => {
@@ -161,33 +162,33 @@ const Landing = () => {
         </div>
         
         <div className=' absolute right-8 top-[50%] translate-y-[-50%] bg-accent hidden md:flex flex-col gap-4 p-2 py-4 rounded-md key'>
-          <Link to={`#`}>
+          <a href={`#`} className='cursor-pointer'>
             <GrApple color='white' />
-          </Link>
+          </a>
 
-          <Link to={`https://www.facebook.com/Ruggedman.Opomulero?mibextid=ZbWKwLf`}>
+          <a href={`https://www.facebook.com/Ruggedman.Opomulero?mibextid=ZbWKwLf`} target='_blank' className='cursor-pointer'>
             <ImFacebook2 color='white' />
-          </Link>
+          </a>
 
-          <Link to={`https://www.instagram.com/ruggedybaba?igsh=b2FydGxhcHk3bnJr`}>
+          <a href={`https://www.instagram.com/ruggedybaba?igsh=b2FydGxhcHk3bnJr`} target='_blank' className='cursor-pointer'>
             <FaInstagram color='white' />
-          </Link>
+          </a>
 
-          <Link to={`#`}>
+          <a href={`#`} target='_blank' className='cursor-pointer'>
             <FaSpotify color='white' />
-          </Link>
+          </a>
 
-          <Link to={`https://x.com/RuggedyBaba?t=PSeWnDqxOHQBs1ezATyIgA&s=09`}>
+          <a href={`https://x.com/RuggedyBaba?t=PSeWnDqxOHQBs1ezATyIgA&s=09`} target='_blank' className='cursor-pointer'>
             <FaTwitter color='white' />
-          </Link>
+          </a>
 
-          <Link to={`https://youtube.com/@ruggedmantv?si=fZWAD1Fzls1zkwoz`}>
+          <a href={`https://youtube.com/@ruggedmantv?si=fZWAD1Fzls1zkwoz`} target='_blank' className='cursor-pointer'>
             <FaYoutube color='white' />
-          </Link>
+          </a>
 
-          <Link to={`#`}>
+          <a href={`href="mailto:ruggedy01@gmail.com`}>
             <SiGmail color='white' />
-          </Link>
+          </a>
 
         </div>
 
@@ -334,8 +335,14 @@ const Landing = () => {
       <CentralModal isOpen={showModal} closeModal={()=> setShowModal(false)} >
         <div className='relative z-20  mt-[7.5%] p-8 py-[40px] w-full max-w-[480px]  bg-[#0F0F11] flex flex-col justify-between'>
 
+          <div className="absolute top-3 right-3 flex items-center justify-center cursor-pointer"
+            onClick={()=> setShowModal(false)}
+          >
+            <IoCloseOutline color={`white`} size={35} />
+          </div>
+
           <div className="w-full h-full flex flex-col  text-white text-left drop-shadow-sm">
-              <h1 className="font-light text-2xl font-crimson text-center">
+              <h1 className="font-light text-2xl font-crimson text-center pt-2">
                 Newsletter
               </h1>
 
@@ -343,26 +350,37 @@ const Landing = () => {
                   <aside className='flex flex-col gap-1'>
                     <label htmlFor="name" className='text-[10px] font-bold font-nunito'><span className='text-xs'>*</span> NAME</label>
                     <input type="text" name="from_name" id=""  
-                      className='h-7 bg-transparent border-b border-white w-full px-4 outline-none '
+                      className='h-7 bg-transparent border-b border-white w-full px-4 outline-none rounded-none '
                       value={messageDetails.name} onChange={({target}) => setMessageDetails(prev => ({...prev, name: target.value }))}
                     />
                   </aside>
                   <aside className='flex flex-col gap-1'>
                     <label htmlFor="name" className='text-[10px] font-bold font-nunito'><span className='text-xs'>*</span> EMAIL</label>
                     <input type="text" name="from_email" id=""  
-                      className='h-7 bg-transparent border-b border-white w-full px-4 outline-none '
+                      className='h-7 bg-transparent border-b border-white w-full px-4 outline-none rounded-none '
                       value={messageDetails.email} onChange={({target}) => setMessageDetails(prev => ({...prev, email: target.value }))}
                     />
                   </aside>
                   <aside className='flex flex-col gap-1'>
                     <label htmlFor="name" className='text-[10px] font-bold font-nunito'><span className='text-xs'>*</span> CHOOSE COUNTRY</label>
                     <input type="text" name="from_country" id=""  
-                      className='h-7 bg-transparent border-b border-white w-full px-4 outline-none '
+                      className='h-7 bg-transparent border-b border-white w-full px-4 outline-none rounded-none '
                       value={messageDetails.country} onChange={({target}) => setMessageDetails(prev => ({...prev, country: target.value }))}
                     />
-                  </aside>                  
-                  <a  href="mailto:ruggedy01@gmail.com" className='text-brand_yellow font-nunito text-[9px] uppercase text-center py-2'>ruggedy01@gmail.com or +234703131979</a>
-                  <button type='submit' className='self-start text-brand_yellow font-nunito border-b border-brand_yellow mt-1 ' onClick={handleSendEmail}>
+                  </aside> 
+                  <h2 className='font-nunito text-[10px]' >SUBSCRIBE TO EMAIL UPDATES FROM:</h2>   
+                  <div className="flex flex-row items-center gap-2">
+                    <input type="checkbox" name=""className="accent-black w-4 h-4 cursor-pointer" />
+                    <p className="text-sm font-crimson">You approve to get newsletter from Ruggedman</p>
+                  </div>
+                  <p className="text-left font-nunito text-[10px] uppercase">
+                    Emails will be sent by or on behalf of Universal Music Group 2220
+                    Colorado Avenue, Santa Monica, CA 90404 (310) 865-4000. You may
+                    withdraw your consent at any time. Privacy Policy /  <br />
+                    do not sell my personal information  
+                  </p>              
+                  <a  href="mailto:ruggedy01@gmail.com" className='text-white font-nunito text-[9px] uppercase text-center py-2'>ruggedy01@gmail.com or +234703131979</a>
+                  <button type='submit' className='self-start text-white  text-xs font-nunito border-b border-white mt-1 ' onClick={handleSendEmail}>
                       SUBMIT
                   </button>
               </form>

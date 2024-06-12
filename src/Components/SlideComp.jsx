@@ -71,12 +71,12 @@ const SlideComp = ({currentSlide, slide, index, identifier}) => {
                     </h2>
 
                     <div className="w-full flex items-center justify-center md:justify-start">
-                    <Link className={`w-max font-nunito text-sm font-semibold border-b border-black  transition-all ease-in-out duration-300 delay-500
+                    <a href={slide?.content?.link} target='_blank' className={`w-max font-nunito text-sm font-semibold border-b border-black  transition-all ease-in-out duration-300 delay-500
                         
                         `}
                         > 
                             STREAM / DOWNLOAD
-                        </Link>
+                        </a>
                     </div>
                 </div>
             </div>
